@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Guessing Game</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        :root {
+          --bs-font-sans-serif: "DM Sans", sans-serif;
+        }
+        .body {
+            max-width: 90%;
+        }
+        @media (min-width: 576px) {
+          .card {
+            border: 0;
+            box-shadow: rgb(0 0 0 / 5%) 0px 10px 20px;
+            border-radius: 10px;
+          }
+        }
+        body {
+            background: linear-gradient(to right, #007bff, #ffffff);
+        }
+        .navbar {
+            background: linear-gradient(to right, #007bff, #ffffff);
+        }
+        .btn-dark {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-dark:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .alert-warning {
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+            color: #856404;
+        }
+    </style>
+</head>
+
+<body class="m-5">
+    <div class="container mt-2" style="max-width: 72em">
+        <nav class="navbar navbar-light">
+            <div class="container-fluid">
+                <span class="navbar-brand m-0 h4 fw-bold text-white">Word Guessing Game</span>
+                <span class="nav-link border rounded-pill bg-light">
+                    <span id="balance">0</span>
+                    cUSD
+                </span>
+            </div>
+        </nav>
+    </div>
+
+    <div class="alert alert-warning sticky-top mt-2" role="alert">
+        <span id="notification">⌛ Loading...</span>
+    </div>
+
+    <div class="mb-4" style="margin-top: 4em">
+        <h3 class="text-primary">How to Play</h3>
+        <ol class="text-dark">
+            <li>Enter a list of comma-separated words you want to guess from.</li>
+            <li>Select the number of rounds you want to play (between 1 and 10).</li>
+            <li>Enter the total amount of cUSD you want to spend during the game session.</li>
+            <li>Click "Start a new gaming session" to begin.</li>
+            <li>You can play the selected number of rounds, and you can choose to start a new game at any time. Starting a new game will automatically end the previous round.</li>
+        </ol>
+        <a class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#startGameModal">
+            Start a new gaming session
+            <i class="bi bi-play-circle ms-2"></i>
+        </a>
+    </div>
+
+
+    <main id="gameboard" class="row"></main>
+
+    <div
+    class="modal fade"
+    id="startGameModal"
+    tabindex="-1"
+    aria-labelledby="startGameModal"
+    aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="startGameModal">Start Game</h5>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="col">
+                                <input
+                                    type="text"
+                                    id="words"
+                                    class="form-control mb-2"
+                                    placeholder="Enter list of comma separated words you want to guess from"
+                                />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input
+                                    type="number"
+                                    id="roundCount"
+                                    class="form-control mb-2"
+                                    placeholder="How many rounds are you playing. between 1-10"
+                                    min="1"
+                                    max="10"
+                                />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input
+                                    type="number"
+                                    id="amount"
+                                    class="form-control mb-2"
+                                    placeholder="Enter the total amount you are playing for"
+                                    min="0"
+                                />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn btn-light border"
+                        data-bs-dismiss="modal"
+                    >
+                    Close
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-dark"
+                        data-bs-dismiss="modal"
+                        id="newGameBtn"
+                    >
+                    Start Game
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/ethereum-blockies@0.1.1/blockies.min.js"></script>
+</body>
+</html>

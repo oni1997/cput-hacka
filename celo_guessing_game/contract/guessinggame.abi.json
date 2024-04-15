@@ -1,0 +1,132 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "randomWord",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "won",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amountWon",
+				"type": "uint256"
+			}
+		],
+		"name": "PlayedRound",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "number",
+				"type": "uint256"
+			}
+		],
+		"name": "createRandom",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getPlayerLastGame",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string[]",
+						"name": "words",
+						"type": "string[]"
+					},
+					{
+						"internalType": "int256",
+						"name": "round_no",
+						"type": "int256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "round_count",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "score",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isCurrentSession",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "unitReward",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct GuessingGame.Game[]",
+				"name": "g",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_word",
+				"type": "string"
+			}
+		],
+		"name": "playGame",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string[]",
+				"name": "_words",
+				"type": "string[]"
+			},
+			{
+				"internalType": "uint8",
+				"name": "_round_no",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "startGameWithCelo",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
