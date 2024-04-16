@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: "development",
@@ -13,12 +14,12 @@ module.exports = {
     path: path.resolve(process.cwd(), "docs"),
     publicPath: ""
   },
-	node: {
-   fs: "empty",
-	 net: "empty"
-	},
+  node: {
+    fs: "empty",
+    net: "empty"
+  },
   watchOptions: {
-    // ignored: /node_modules/,
+    // ignored: /node\_modules/,
     aggregateTimeout: 300, // After seeing an edit, wait .3 seconds to recompile
     poll: 500 // Check for edits every 5 seconds
   },
@@ -27,6 +28,11 @@ module.exports = {
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(process.cwd(), "public", "index.html")
-    })
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public', to: 'docs' },
+      ],
+    }),
   ]
 }
