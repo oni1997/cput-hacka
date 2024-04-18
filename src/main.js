@@ -218,3 +218,6 @@ document.querySelector("#gameboard").addEventListener("click", async (e) => {
         }
     }
 })
+
+
+
