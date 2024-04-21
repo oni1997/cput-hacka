@@ -5,8 +5,8 @@ import guessinggameABI from "../contract/guessinggame.abi.json";
 import erc20Abi from "../contract/erc20.abi.json";
 
 const ERC20_DECIMALS = 18;
-const GGCAddress = "0x4dD3a8a732de8BE22F24094e80aBcB3E7DEF3426";
-const cUSDContractAddress = "0x66E5C1d3f79F244f6542FC6b4957459b82617dA4";
+const GGCAddress = "0xd02939a969dff64A8569819020CB3c86a7Af86b7";
+const cUSDContractAddress = "0x874069fa1eb16d44d622f2e0ca25eea172369bc1";
 
 let kit
 let contract

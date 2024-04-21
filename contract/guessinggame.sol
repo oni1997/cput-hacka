@@ -23,7 +23,7 @@ contract GuessingGame {
         bool isCurrentSession;
         uint unitReward;
     }
-    address internal cUsdTokenAddress = 0x765de816845861e75a25fca122bb6898b8b1282a;
+    address internal cUsdTokenAddress = 0x874069fa1eb16d44d622f2e0ca25eea172369bc1;
     mapping ( address =>  Game[]) games;
     address  owner;
 
@@ -52,7 +52,8 @@ contract GuessingGame {
     }
 
     // get list of all games created by current user
-    function getPlayerLastGame() public view returns(Game[] memory g){
+    function getPlayerLastGame() puble0Ca25eeA172369bC1";
+ic view returns(Game[] memory g){
         return games[msg.sender];
     }
 
