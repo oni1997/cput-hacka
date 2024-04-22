@@ -69,14 +69,22 @@ npm run build
 
 # Usage
 1. Install the [CeloExtensionWallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en) from the Google Chrome Store.
+
 ![alt text](image-1.png)
+
 2. Create a wallet.
+
 ![alt text](image-3.png)
+
 ![alt text](image-2.png)
+
 3. Go to [https://celo.org/developers/faucet](https://celo.org/developers/faucet) and get tokens for the Alfajores testnet.
+
 ![alt text](image-4.png)
+
 4. Switch to the Alfajores testnet in the Celo Extension Wallet.
 
 # Solidity
 - https://remix.ethereum.org/
+
 ![alt text](image-6.png)
