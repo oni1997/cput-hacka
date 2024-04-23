@@ -1,0 +1,9 @@
+type PlayedRound @entity(immutable: true) {
+  id: Bytes!
+  randomWord: String! # string
+  won: Boolean! # bool
+  amountWon: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

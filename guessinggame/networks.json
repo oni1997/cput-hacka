@@ -1,0 +1,8 @@
+{
+  "celo": {
+    "GuessingGame": {
+      "address": "0xd02939a969dff64A8569819020CB3c86a7Af86b7",
+      "startBlock": 0
+    }
+  }
+}
