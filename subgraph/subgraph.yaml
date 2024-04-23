@@ -1,0 +1,26 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: GuessingGame
+    network: celo
+    source:
+      address: "0xd02939a969dff64A8569819020CB3c86a7Af86b7"
+      abi: GuessingGame
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - PlayedRound
+      abis:
+        - name: GuessingGame
+          file: ./abis/GuessingGame.json
+      eventHandlers:
+        - event: PlayedRound(string,bool,uint256)
+          handler: handlePlayedRound
+      file: ./src/guessing-game.ts
